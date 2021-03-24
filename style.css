@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+    background-color: #05404b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+
+h1{
+    color:#add4ff;
+    width: fit-content;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+.inputValue {
+    background-color:#085b69;
+    font-family: 'Mukta', sans-serif;
+    height: 44px;
+    width: 80%;
+    border-style: 1px black solid ;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.inputValue::placeholder {
+    color: #FFF;
+    font-size: 1.1rem;
+}
+
+.inputValue:hover{
+   background-color: #0f8ba1;
+}
+
+.inputValue{
+    font-size: 2rem;
+}
+
+.submit, .reset {
+    background-color: transparent;
+    color: #f3ff51;
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border-style: 1px black solid ;
+    text-align: center;
+    padding: 8px;
+    margin: 10px 10px 10px 0;
+    cursor: pointer;
+}
+
+.submit:hover, .reset:hover{
+    font-size: 1.2rem;
+    padding:5px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.forcast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 25rem;
+    line-height: 22px;
+    font-size: large;
+    background-color: #add4ff;
+    padding: 0.8rem;
+    border-radius: 5%;
+}
+
+#container-message {
+    width: 70%;
+    text-align: center;
+    margin-top: 2.5rem;
+    color: #616860; 
+}
+
+/*Weathericons*/
+.fas {
+    font-size: 6rem;
+}
+
+#sun {
+    color: rgb(233, 218, 3);
+    visibility: hidden;
+    position: relative;
+    top: 15%;
+}
+
+#cloud {
+    color: rgb(244, 244, 250);
+    visibility: hidden;
+    position: relative;
+    top: -10%;
+}
+
+#rain {
+    color: rgb(131, 131, 131);
+    visibility: hidden;
+    position: relative;
+    top: -30%;
+}
+
+#fog {
+    color: rgb(131, 131, 131);
+    visibility: hidden;
+    position: relative;
+    top: -55%;
+}
+
+footer {
+    color: #f3ff51;
+}
+
+@media only screen and (min-width: 450px ) {
+    body {
+        font-size: 1.1rem;
+    }
+
+    h1{
+        font-size: 180%;
+        margin: 1rem 1.4rem;
+    }
+
+    .inputValue {
+        width: 45%;
+        margin: 1.6rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .forcast-container {
+        margin: 1rem;
+        width: 390px;
+    }
+
+    .fas {
+        font-size: 8rem;
+    }
+
+    #sun {
+        top: 10%;
+    }
+    
+    #cloud {
+        top: -25%;
+    }
+    
+    #rain {
+        top: -50%;
+    }
+    
+    #fog {
+        top: -85%;
+    }
+
+}
+
+@media only screen and (min-width: 650px ) {
+
+    body {
+        font-size: 1.2rem;
+        margin: 2rem 0;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .submit:hover, .reset:hover {
+       font-size: 1.3rem;
+       padding: 5px;
+    }
+
+    .forcast-container {
+        width: 600px;
+    }
+
+    .fas {
+        font-size: 9rem;
+    }
+
+    #sun {
+        top: 10%;
+    }
+    
+    #cloud {
+    
+        top: -25%;
+    }
+    
+    #rain {
+        top: -60%;
+    }
+    
+    #fog {
+        top: -95%;
+    }
+ 
+}

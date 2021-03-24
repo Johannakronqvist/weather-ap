@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather app</title>
+</head>
+<body>
+    <div id="wrapper" >
+    <h1>What is the weather like in...?</h1>
+    <input class="inputValue" type="text" placeholder="Enter a city" style="font-size: large;">
+    <input type="submit" value="Submit" class="submit">
+    <input type="reset" value="Reset" class="reset">
+    <div class="forcast-container">
+        <h2 class="city"></h2>
+
+        <h3 id="container-message">Type in a city in the box above to check what the weather is like there! </h3>
+
+        <p class="desc"></p>
+        <p class="temp"></p>
+        <p class="feels"></p>
+        <p class="humidity"></p>
+        <p class="wind"></p>
+
+        <!--Väderikoner-->
+        <i class="fas fa-sun" id="sun"></i>
+        <i class="fas fa-cloud" id="cloud"></i>
+        <i class="fas fa-cloud-showers-heavy" id="rain"></i>
+        <i class="fas fa-smog" id="fog" ></i>
+        
+    </div>
+    </div>
+    <footer>
+        <p>&copy 2021 made by Johanna Kronqvist </p>
+    </footer>
+    <script src="index.js">
+    </script>
+</body>
+</html>
