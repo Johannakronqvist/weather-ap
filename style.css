@@ -274,6 +274,7 @@ footer {
 		align-self: flex-start;
 		margin-left: 2rem ;
 		text-align: left;
+		max-width: 16rem;
 	}
 
     .fas {

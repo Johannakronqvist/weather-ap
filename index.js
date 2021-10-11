@@ -14,10 +14,10 @@ let wind = document.querySelector('.wind');
 
 //små väderikoner på startskärmen
 let smallIcons = document.querySelector('#small-icons');
-      
 
-//Funktionen för vad som häner när man trycker submit-knappen
-button.addEventListener('click', function() {
+let enter = 13;
+
+function onSearch() {
     //Tar bort meddelandet när användaren söker på en stad
     document.getElementById('container-message').remove();
 
@@ -42,7 +42,7 @@ button.addEventListener('click', function() {
         wind.innerHTML = 'Wind:  ' + windData  + 'k/h';
 
 		//Gömmer de små väder ikonerna vid sökning
-		smallIcons.style.visibility='hidden'
+		smallIcons.style.visibility ='hidden';
 
     //Ändrar väderikonen beroende på väderbeskrivning
       if (condData.includes('Sun') || condData.includes('Clear')) {
@@ -57,7 +57,19 @@ button.addEventListener('click', function() {
     }).catch(()=>{
         alert('We could not find this city! Please reset and enter another city name.')
     })
-});
+};
+
+//Sökfunktion triggas genom knapptrck. 
+button.addEventListener('click', onSearch);
+
+// Sökfunktion triggas genom Enter
+inputValue.addEventListener("keyup", function(event) {
+	if (event.keyCode === enter) {
+	  	event.preventDefault();
+		button.click(onSearch);
+	}
+  });
+
     //Laddar om sidan och nollställer
     resetButton.addEventListener('click', function (){
     document.location.reload();
