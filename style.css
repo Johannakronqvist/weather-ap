@@ -17,10 +17,8 @@ body {
     cursor: pointer;
 }
 
-
-
 h1{
-    color:#add4ff;
+    color: #f3ff51;
     width: fit-content;
     font-size: 1.4rem;
     margin: 1rem 0;
@@ -77,17 +75,52 @@ h2 {
     flex-direction: column;
     align-items: center;
     height: 25rem;
-    line-height: 22px;
     font-size: large;
     background-color: #add4ff;
     padding: 0.8rem;
     border-radius: 5%;
 }
 
+#conditions {
+	color: #000;
+	line-height: 25px;
+	text-align: center;
+	position: relative;
+	bottom: -20%;
+}
+
+#small-icons {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	list-style-type: none;
+	top: 5%;
+	visibility: visible;
+	
+}
+
+#small-icons li .fas {
+	font-size: 3rem;
+	margin: 5px;
+}
+
+#cloudsm {
+	color: rgb(244, 244, 250);
+}
+#rainsm {
+	color: rgb(131, 131, 131);
+}
+#sunsm {
+	color: rgb(233, 218, 3);
+}
+#fogsm {
+	color: rgb(131, 131, 131);
+}
+
 #container-message {
-    width: 70%;
+	width: 70%;
     text-align: center;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     color: #616860; 
 }
 
@@ -100,28 +133,28 @@ h2 {
     color: rgb(233, 218, 3);
     visibility: hidden;
     position: relative;
-    top: 15%;
+    top: -40%;
 }
 
 #cloud {
     color: rgb(244, 244, 250);
     visibility: hidden;
     position: relative;
-    top: -10%;
+    top: -65%;
 }
 
 #rain {
     color: rgb(131, 131, 131);
     visibility: hidden;
     position: relative;
-    top: -30%;
+    top: -90%;
 }
 
 #fog {
     color: rgb(131, 131, 131);
     visibility: hidden;
     position: relative;
-    top: -55%;
+    top: -115%;
 }
 
 footer {
@@ -157,19 +190,19 @@ footer {
     }
 
     #sun {
-        top: 10%;
+        top: -45%;
     }
     
     #cloud {
-        top: -25%;
+        top: -77%;
     }
     
     #rain {
-        top: -50%;
+        top: -110%;
     }
     
     #fog {
-        top: -85%;
+        top: -140%;
     }
 
 }
@@ -183,6 +216,8 @@ footer {
 
     h2 {
         font-size: 1.6rem;
+		grid-area: city;
+		align-self: flex-end;
     }
 
     .submit:hover, .reset:hover {
@@ -190,29 +225,80 @@ footer {
        padding: 5px;
     }
 
-    .forcast-container {
-        width: 600px;
-    }
+	.forcast-container {
+		display: grid;
+		grid-template-areas: 
+		"city animation"
+		"conditions animation";
+		grid-template-rows: 1fr 2fr;
+		font-size: large;
+		background-color: #add4ff;
+		padding: 0.8rem;
+		border-radius: 5%;
+		width: 600px;
+	}
+
+	#small-icons {
+		position: relative;
+		list-style-type: none;
+		top: -180%;
+		left: 20%;
+		visibility: visible;
+	}
+
+	#small-icons li .fas {
+		font-size: 5rem;
+		margin: 10px;
+	}
+
+	#container-message {
+		width: 200%;
+		text-align: center;
+		position: relative;
+		left: -170%;
+	}
+
+	.forcast-container h3 {
+		position: relative;
+		top: -70%;
+		left: 38%;
+	}
+
+	.forcast-container h2 {
+		margin-left: 2rem;
+		margin-bottom: 0;
+	}
+
+	#conditions {
+		grid-area: conditions;
+		align-self: flex-start;
+		margin-left: 2rem ;
+		text-align: left;
+	}
 
     .fas {
         font-size: 9rem;
+		grid-area: animation;
     }
 
     #sun {
-        top: 10%;
+		top: 20%;
+		left: -55%;
     }
     
     #cloud {
-    
-        top: -25%;
+		top: 21%;
+		left: -65%;
     }
     
     #rain {
-        top: -60%;
+		top: 20%;
+		left: -65%;
     }
     
     #fog {
-        top: -95%;
+        top: 20%;
+		left: -65%;
     }
  
 }

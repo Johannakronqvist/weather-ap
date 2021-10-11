@@ -11,6 +11,9 @@ let temperature = document.querySelector('.temp');
 let feelsLike = document.querySelector('.feels')
 let humidity = document.querySelector('.humidity');
 let wind = document.querySelector('.wind');
+
+//små väderikoner på startskärmen
+let smallIcons = document.querySelector('#small-icons');
       
 
 //Funktionen för vad som häner när man trycker submit-knappen
@@ -32,16 +35,19 @@ button.addEventListener('click', function() {
         
         //Datan frambringas i webbläsaren
         city.innerHTML = cityData;
-        condition.innerHTML = 'Condition: ' + condData;
-        temperature.innerHTML = 'Temperature: ' + tempData + ' °C';
-        feelsLike.innerHTML = 'Feels like: ' + feelsLikeData + ' °C';
-        humidity.innerHTML = 'Humidity: ' + humidityData + '%'; 
-        wind.innerHTML = 'Wind: ' + windData  + 'k/h';
+        condition.innerHTML = 'Condition:  ' + condData;
+        temperature.innerHTML = 'Temperature:  ' + tempData + ' °C';
+        feelsLike.innerHTML = `Feels like:  ${feelsLikeData} °C`;
+        humidity.innerHTML = 'Humidity:  ' + humidityData + '%'; 
+        wind.innerHTML = 'Wind:  ' + windData  + 'k/h';
 
-          //Ändrar väderikonen beroende på väderbeskrivning
+		//Gömmer de små väder ikonerna vid sökning
+		smallIcons.style.visibility='hidden'
+
+    //Ändrar väderikonen beroende på väderbeskrivning
       if (condData.includes('Sun') || condData.includes('Clear')) {
         document.getElementById('sun').style.visibility = 'visible';
-    } else if (condData.includes('Rain')) {
+    } else if (condData.includes('Rain') || condData.includes('rain')) {
         document.getElementById('rain').style.visibility = 'visible';
     } else if (condData.includes('Mist') || condData.includes('Fog')) {
         document.getElementById('fog').style.visibility = 'visible';
