@@ -16,6 +16,11 @@ let wind = document.querySelector('.wind');
 let smallIcons = document.querySelector('#small-icons');
 //hämtar "enter" på tangentbordet
 let enter = 13;
+//väderikoner
+let sun = document.getElementById('sun');
+let rain = document.getElementById('rain');
+let fog = document.getElementById('fog');
+let cloud = document.getElementById('cloud');
 
 function onSearch() {
     //Tar bort meddelandet när användaren söker på en stad
@@ -46,13 +51,25 @@ function onSearch() {
 
     //Ändrar väderikonen beroende på väderbeskrivning
       if (condData.includes('Sun') || condData.includes('Clear')) {
-        document.getElementById('sun').style.visibility = 'visible';
+		  	sun.style.visibility = 'visible';
+		  	cloud.style.visibility = 'hidden';
+		  	fog.style.visibility = 'hidden';
+		  	rain.style.visibility = 'hidden';
     	} else if (condData.includes('Rain') || condData.includes('rain')) {
-        document.getElementById('rain').style.visibility = 'visible';
+			rain.style.visibility = 'visible';
+			cloud.style.visibility = 'hidden';
+		  	fog.style.visibility = 'hidden';
+		  	sun.style.visibility = 'hidden';
     	} else if (condData.includes('Mist') || condData.includes('Fog')) {
-        document.getElementById('fog').style.visibility = 'visible';
+			fog.style.visibility = 'visible';
+			cloud.style.visibility = 'hidden';
+		   	sun.style.visibility = 'hidden';
+		  	rain.style.visibility = 'hidden';
     	} else {
-        document.getElementById('cloud').style.visibility = 'visible';
+			cloud.style.visibility = 'visible';
+		  	sun.style.visibility = 'hidden';
+		  	fog.style.visibility = 'hidden';
+		  	rain.style.visibility = 'hidden';
     	};
     	}).catch(()=>{
         alert('We could not find this city! Please reset and enter another city name.')
