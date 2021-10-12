@@ -14,12 +14,12 @@ let wind = document.querySelector('.wind');
 
 //små väderikoner på startskärmen
 let smallIcons = document.querySelector('#small-icons');
-
+//hämtar "enter" på tangentbordet
 let enter = 13;
 
 function onSearch() {
     //Tar bort meddelandet när användaren söker på en stad
-    document.getElementById('container-message').remove();
+    if(message != null) { message.remove() };
 
     //Hämtar data från API
     fetch('https://api.weatherapi.com/v1/current.json?key=13b60eb1c9fc4420b4b103815211803&q='+inputValue.value+'&aqi=yes')
@@ -47,19 +47,19 @@ function onSearch() {
     //Ändrar väderikonen beroende på väderbeskrivning
       if (condData.includes('Sun') || condData.includes('Clear')) {
         document.getElementById('sun').style.visibility = 'visible';
-    } else if (condData.includes('Rain') || condData.includes('rain')) {
+    	} else if (condData.includes('Rain') || condData.includes('rain')) {
         document.getElementById('rain').style.visibility = 'visible';
-    } else if (condData.includes('Mist') || condData.includes('Fog')) {
+    	} else if (condData.includes('Mist') || condData.includes('Fog')) {
         document.getElementById('fog').style.visibility = 'visible';
-    } else {
+    	} else {
         document.getElementById('cloud').style.visibility = 'visible';
-    };
-    }).catch(()=>{
+    	};
+    	}).catch(()=>{
         alert('We could not find this city! Please reset and enter another city name.')
-    })
+   	})
 };
 
-//Sökfunktion triggas genom knapptrck. 
+//Sökfunktion triggas genom knapptryck. 
 button.addEventListener('click', onSearch);
 
 // Sökfunktion triggas genom Enter
@@ -68,9 +68,9 @@ inputValue.addEventListener("keyup", function(event) {
 	  	event.preventDefault();
 		button.click(onSearch);
 	}
-  });
+});
 
-    //Laddar om sidan och nollställer
+//Laddar om sidan och nollställer
     resetButton.addEventListener('click', function (){
     document.location.reload();
 });
